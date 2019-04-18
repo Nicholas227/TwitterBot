@@ -201,10 +201,13 @@ public class MarkovObject {
         markovChain = sb.toString();
     }
 
+    //gets sentiment of a string
     public String getSentiment(){
         StringBuilder sb = new StringBuilder();
         int num = 0;
         String sentimentOverall = "";
+        //cycles through the sentimentScores and determines the overall sentiment,
+        //sentiments weight with positive and negative numbers representing positive and negative emotions
         for(int i = 0; i < sentimentScores.size(); i++){
             num += sentimentScores.get(i);
         }
@@ -214,11 +217,12 @@ public class MarkovObject {
             sentimentOverall = num > 0 ? "happy" : "unhappy";
         }
         sb.append(", generally, your tweets are ");
-        sb.append( sentimentOverall);
+        sb.append(sentimentOverall);
         sb.append(".");
         return sb.toString();
     }
 
+    //Starts the natural language processing, using StanfordCoreNLP
     public void startNLP() throws IOException {
         Properties attributes = new Properties();
         ArrayList<Integer> sentiments = new ArrayList<>();
