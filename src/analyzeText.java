@@ -1,3 +1,6 @@
+/*
+* Testing Class for the analyzeText Function, produces randomly generated strings
+*/
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
